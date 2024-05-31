@@ -1,0 +1,45 @@
+/* Destructing Object */
+
+const person = {
+  name: 'Prathap',
+  age: 24,
+  designation: 'Associate Engineer',
+};
+const user = ({name,age,designation})=>{
+console.log(`${name} ${age} ${designation}`)
+}
+user(person);
+
+/* Destructing Array */
+
+const skills = [["Raect JS","Javascript"],["HTML","CSS"]];
+const [MandatorySkills,OptionalSkills] = skills;
+console.log(MandatorySkills);
+console.log(OptionalSkills);
+
+/* Spread Operator */
+
+const Cricketer = { name :"Rohit Sharma"};
+const stats ={ gamesCount : 345, runs:35000 };
+
+const res = {...Cricketer,...stats};
+console.log(res)
+
+/* Rest Operator */
+
+const arr = [12,34,90,888,567,32,45];
+const [a,b,...rest] = arr;
+console.log(`${rest}`)
+
+/* For of is faster than 24% forEach() */
+
+const HomeNeeds = ["Rice","Cholocate","Brush","Dates","Shirts","Clothes"];
+const elements = ()=>{
+  let newArray = [];
+  for(let elements of HomeNeeds){
+    newArray.push(elements)
+  }
+  return newArray
+}
+console.log(elements());
+

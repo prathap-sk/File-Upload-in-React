@@ -1,0 +1,45 @@
+/*
+ Currying is a function, inside the function passed the multiple parameter into single parameters.
+ ---> It helps us to create a higher order function
+ ---> It reduces the chances of error in our function by dividing into multiple smaller functions that can handle one responsibility.
+ --->  Currying is a function, inside the function passed the multiple parameter into single parameters.
+ ---> It makes the code more readable
+*/
+
+// Normal Function
+const NormalCurrying = (length, breadth, height) => {
+    return length * breadth * height
+}
+console.log(NormalCurrying(4, 5, 6))
+
+const Currying = (length) => {
+    return (breadth) => {
+        return (height) => {
+            return length * breadth * height
+        }
+    }
+}
+console.log(Currying(10)(9)(8));
+
+/*
+Example 2 Calculating the add and multiply
+ */
+
+const add = (a, b) => {
+    return a + b
+};
+const multiply = (a, b) => {
+    return a * b
+}
+
+const calculate = (operation) => {
+    return (a) => {
+        return (b) => {
+            return operation(a, b)
+        }
+    }
+}
+
+console.log(calculate(add)(10)(20))
+console.log(calculate(multiply)(10)(20))
+
